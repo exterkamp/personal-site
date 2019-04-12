@@ -1,0 +1,262 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+
+html {
+    background: #edf1f3;
+    color: rgb(28, 32, 32);;
+    height: 100%;
+    
+}
+
+main {
+    min-width: 375px;
+}
+
+.hero-header {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#portrait {
+    max-width: 150px;
+    margin-top: 10%;
+    border-radius: 50%;
+}
+
+.history-text {
+    font-size: 19px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.goog-blue {
+    color: #4285F4;
+}
+
+.goog-red {
+    color: #DB4437;
+}
+
+.goog-yellow {
+    color: #F4B400;
+}
+
+.goog-green {
+    color: #0F9D58;
+}
+
+.uf-orange {
+    color: #FA4616;
+}
+
+.uf-blue {
+    color: #0021A5;
+}
+
+.hero-text {
+    font-family: Georgia;
+}
+
+.hero-name {
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.hero-job {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.content-container {
+    font-size: 1rem;
+    padding: 20px 10%;
+    line-height: 1.25;
+    background-color: #fefefe;
+}
+
+.group-heading {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.icon {
+    font-size: 1.7rem;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.icon-left-border {
+    border: 2px;
+    border-color: #c2d2da;
+    border-style: none none none solid;
+    padding-left: 5px;
+    margin-left: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    right:10px;
+    text-align: right;
+    font-size: 0.8rem;
+    color: #c2d2da;
+}
+
+#spotify-plugin {
+    margin-top: 20px;
+}
+
+#spotify-header, #spotify-footer {
+    /* margin: 10px; */
+    font-size: 12px;
+    color: #424c52;
+}
+
+#spotify-container {
+    height: 170px;
+    display:flex;
+    justify-content:center;
+}
+
+.spotify-track {
+    font-size: 12px;
+    margin: 10px;
+    width: 175px;
+    color: #272727;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: appear 0.5s forwards;
+}
+
+.spotify-album-img {
+    height: 150px;
+    width: 150px;
+    transform: rotateY(-10deg) skewY(-1.5deg);
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    transition: transform 1s ease-in-out;
+    z-index: 100;
+}
+
+.spotify-album-paper {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background-color: rgb(214, 194, 165);
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top:0;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.spotify-album-paper::-webkit-scrollbar {
+    width: 0px;
+}
+
+.album-hover-target:hover .spotify-album-img {
+    transform: rotateY(-120deg) skewY(-5deg);
+}
+
+.spotify-link {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color: #1ED760;
+    border: none;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    font-size: 16px;
+    text-align: left;
+    margin: 10px;
+    width: 140px;
+    border-radius: 5px 15px 15px 5px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.spotify-song {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.fall {
+    animation: fall 0.75s forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform-origin: center;
+        opacity: 1;
+    }
+    20% {
+        transform: 
+        translate3d(0, 20px, 0)
+        rotate3d(0, 0, 1, -5deg);
+        opacity: 1;
+    }
+    40%, 45% {
+        transform: 
+        translate3d(0, -60px, 0)
+        rotate3d(0, 0, 1, 5deg);
+        opacity: 1;
+        
+    }
+    to {
+        opacity: 0;
+        transform: 
+        translate3d(0, 100%, 0)
+        rotate3d(0, 0, 1, 10deg);
+    }
+}
+
+@keyframes appear {
+    0% {
+        transform-origin: center;
+        transform: 
+        translate3d(0, 50%, 0)
+        rotate3d(0, 0, 1, 0deg);
+        opacity: 0;
+    }
+    80% {
+        transform: 
+        translate3d(0, -10px, 0)
+        rotate3d(0, 0, 1, -5deg);
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width:600px) { 
+    body {
+        overflow: auto;
+    }
+
+    #portrait {
+        max-width: 200px;
+    }
+
+    #spotify-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    footer {
+        display: none;
+    }
+}
